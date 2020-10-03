@@ -1,0 +1,5 @@
+﻿  main.cpp
+D:\Projects\Lab2\Lab2\main.cpp(21,6): warning C4101: x: неиспользованная локальная переменная
+D:\Projects\Lab2\Lab2\main.cpp(51,6): warning C4101: randNumber2: неиспользованная локальная переменная
+D:\Projects\Lab2\Lab2\main.cpp(50,6): warning C4101: randNumber1: неиспользованная локальная переменная
+  Lab2.vcxproj -> D:\Projects\Lab2\Debug\Lab2.exe
