@@ -19,6 +19,7 @@ void showResult();
 
  int transfer(char simbol);
  int checkString();
+ int peepoocheck();
 
 int main() {
 	setlocale(LC_ALL, "Russian");
@@ -39,6 +40,7 @@ int main() {
 	fill();
 	subtraction();
 	//sum();
+	cout << "-";
 	showResult();
 
 	cout << endl;
@@ -161,22 +163,57 @@ void subtraction() {
 		}
 	}
 
-	for (int i = num1.size() - 1; i >= 0; i--) {
-		if (num1[i] < num2[i]) {
-			result.insert(result.begin(), (num1[i] + 10) - num2[i]);
-			int j = i;
-			while (j > 0) {
-				if (num1[j - 1] != 0) {
-					num1[j - 1] = num1[j - 1] - 1;
-					break;
+	if (peepoocheck()) {
+		for (int i = num1.size() - 1; i >= 0; i--) {
+			if (num1[i] < num2[i]) {
+				result.insert(result.begin(), (num1[i] + 10) - num2[i]);
+				int j = i;
+				while (j > 0) {
+					if (num1[j - 1] != 0) {
+						num1[j - 1] = num1[j - 1] - 1;
+						break;
+					}
+					else
+						j--;
 				}
-				else
-					j--;
+			}
+			else {
+				result.insert(result.begin(), num1[i] - num2[i]);
 			}
 		}
-		else {
-			result.insert(result.begin(), num1[i] - num2[i]);
+	}
+	else {
+		for (int i = num1.size() - 1; i >= 0; i--) {
+			if (num2[i] < num1[i]) {
+				result.insert(result.begin(), (num2[i] + 10) - num1[i]);
+				int j = i;
+				while (j > 0) {
+					if (num2[j - 1] != 0) {
+						num2[j - 1] = num2[j - 1] - 1;
+						break;
+					}
+					else
+						j--;
+				}
+			}
+			else {
+				result.insert(result.begin(), num2[i] - num1[i]);
+			}
 		}
+	}
+}
+
+int peepoocheck() {
+	if (num1.size() > num2.size())
+		return 1;
+	else if (num2.size() > num1.size())
+		return 0;
+	
+	for (int i = 0; i < num1.size(); i++) {
+		if (num1[i] > num2[i])
+			return 1;
+		else if (num2[i] > num1[i])
+			return 0;
 	}
 }
 
