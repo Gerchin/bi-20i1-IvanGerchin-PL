@@ -1,5 +1,7 @@
 ﻿  main.cpp
-D:\Projects\lab_bigMath\lab_bigMath\main.cpp(54,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\Projects\lab_bigMath\lab_bigMath\main.cpp(69,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\Projects\lab_bigMath\lab_bigMath\main.cpp(136,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Projects\lab_bigMath\lab_bigMath\main.cpp(45,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Projects\lab_bigMath\lab_bigMath\main.cpp(49,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Projects\lab_bigMath\lab_bigMath\main.cpp(71,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Projects\lab_bigMath\lab_bigMath\main.cpp(86,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Projects\lab_bigMath\lab_bigMath\main.cpp(184,20): warning C4018: <: несоответствие типов со знаком и без знака
   lab_bigMath.vcxproj -> D:\Projects\lab_bigMath\Debug\lab_bigMath.exe
