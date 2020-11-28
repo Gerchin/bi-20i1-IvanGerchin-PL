@@ -12,37 +12,23 @@ vector<int> num2;
 vector<int> result;
 
 //void welcomeMessage();
-void fill();
-void sum();
+void fill(); // заполенение векторов значениями, которые ввёл юзер
+void sum(); // операция суммы
 void subtraction();
-void showResult();
+void menu();
+void showResult(); // вывод конечного результата
 
- int transfer(char simbol);
- int checkString();
+ int transfer(char simbol); // перевод символов в числа
+ int checkString(); // проверка на правильность введенных символов
  int peepoocheck();
+ int checkOperation();
 
 int main() {
 	setlocale(LC_ALL, "Russian");
 
 	//welcomeMessage();
-
-		do {
-			cout << "Введите выражение. (Нажмешь на ENTER при пустой строке и я умру :(  )" << endl;
-			getline(cin, userInput);
-			if (checkString()) {
-				system("cls");
-				cout << "Введите корректное выражение." << endl;
-				system("pause");
-			}
-			system("cls");
-		} while (checkString());
-
-	fill();
-	subtraction();
-	//sum();
-	cout << "-";
-	showResult();
-
+	menu();
+	/*
 	cout << endl;
 	for (int i = 0; i < num1.size(); i++) {
 		cout << num1[i];
@@ -50,9 +36,7 @@ int main() {
 	cout << endl;
 	for (int i = 0; i < num2.size(); i++) {
 		cout << num2[i];
-	}
-
-	system("pause");
+	}*/
 	return 0;
 }
 
@@ -66,6 +50,61 @@ int main() {
 	Sleep(1000);
 	system("cls");
 }*/
+
+void menu() {
+	string line = { "14123213231 + 75674567465746 5675753675+437643754" };
+	bool pass = true;
+
+	do {
+		cout << "1 - Калькулятор" << endl;
+		cout << "2 - КАК ПРАВИЛЬНО ПИСАТЬ В МОЁМ КАЛЬКУЛЯТОРЕ!!!!!!" << endl;
+		cout << "3 - Выйти" << endl;
+
+		switch (_getch()) {
+		case 49:
+			do {
+				system("cls");
+				cout << "Введите выражение. (Нажмешь на ENTER при пустой строке и я умру :(  )" << endl;
+				getline(cin, userInput);
+				if (checkString()) {
+					system("cls");
+					cout << "Введите корректное выражение." << endl;
+					system("pause");
+				}
+				system("cls");
+			} while (checkString());
+
+			fill();
+
+			switch (checkOperation()) {
+			case 2:
+				sum(); break;
+			case 3:
+				subtraction(); break;
+			default:
+				break;
+			}
+			showResult();
+			system("pause");
+			break;
+
+		case 50:
+			for (int i = 0; i < line.length(); i++) {
+				cout << line[i];
+				if (i == 28)
+					cout << endl;
+			} cout << endl;
+			system("pause");
+			break;
+		case 51:
+			pass = false;
+			break;
+		default:
+			break;
+		}
+		system("cls");
+	} while (pass);
+}
 
 int checkString() { // проверка на правильность введенных символов
 	int counter = 0;
@@ -82,6 +121,21 @@ int checkString() { // проверка на правильность введенных символов
 		return false;
 }
 
+int checkOperation() {
+	int counter = 0;
+	for (int i = 0; i < userInput.length(); i++)
+	{
+		if (userInput[i] == '+')
+			return 2;
+		else if (userInput[i] == '-' && i != 0)
+			return 3;
+		counter++;
+	}
+	if (counter == userInput.length() - 1)
+		return true;
+
+}
+
 void fill() { // заполенение векторов значениями, которые ввёл юзер
 	int flag = 0;
 
@@ -92,7 +146,7 @@ void fill() { // заполенение векторов значениями, которые ввёл юзер
 			else
 				num2.push_back(transfer(userInput[i]));
 		}
-		if (userInput[i] == '+' || userInput[i] == '-' || userInput[i] == '*' || userInput[i] == '/' || userInput[i] == '^')
+		if (userInput[i] == '+' || userInput[i] == '-' || userInput[i] == '*' || userInput[i] == '/' || userInput[i] == '^') 
 			flag++;
 	}
 }
@@ -200,6 +254,7 @@ void subtraction() {
 				result.insert(result.begin(), num2[i] - num1[i]);
 			}
 		}
+		cout << "-";
 	}
 }
 
@@ -220,4 +275,5 @@ int peepoocheck() {
 void showResult() { // вывод конечного результата
 	for (int i = 0; i < result.size(); i++)
 		cout << result[i];
+	cout << endl;
 }
