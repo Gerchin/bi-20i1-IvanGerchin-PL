@@ -1,10 +1,11 @@
 ﻿  main.cpp
-D:\Projects\lab_bigMath\lab_bigMath\main.cpp(92,22): warning C4018: <: несоответствие типов со знаком и без знака
-D:\Projects\lab_bigMath\lab_bigMath\main.cpp(112,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\Projects\lab_bigMath\lab_bigMath\main.cpp(126,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\Projects\lab_bigMath\lab_bigMath\main.cpp(142,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\Projects\lab_bigMath\lab_bigMath\main.cpp(267,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\Projects\lab_bigMath\lab_bigMath\main.cpp(276,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\Projects\lab_bigMath\lab_bigMath\main.cpp(137): warning C4715: checkOperation: значение возвращается не при всех путях выполнения
-D:\Projects\lab_bigMath\lab_bigMath\main.cpp(273): warning C4715: peepoocheck: значение возвращается не при всех путях выполнения
+D:\Projects\lab_bigMath\lab_bigMath\main.cpp(45,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Projects\lab_bigMath\lab_bigMath\main.cpp(93,22): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Projects\lab_bigMath\lab_bigMath\main.cpp(113,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Projects\lab_bigMath\lab_bigMath\main.cpp(127,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Projects\lab_bigMath\lab_bigMath\main.cpp(143,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Projects\lab_bigMath\lab_bigMath\main.cpp(268,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Projects\lab_bigMath\lab_bigMath\main.cpp(277,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Projects\lab_bigMath\lab_bigMath\main.cpp(138): warning C4715: checkOperation: значение возвращается не при всех путях выполнения
+D:\Projects\lab_bigMath\lab_bigMath\main.cpp(274): warning C4715: peepoocheck: значение возвращается не при всех путях выполнения
   lab_bigMath.vcxproj -> D:\Projects\lab_bigMath\Debug\lab_bigMath.exe

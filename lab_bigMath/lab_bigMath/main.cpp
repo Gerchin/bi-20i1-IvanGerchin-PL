@@ -11,7 +11,7 @@ vector<int> num1;
 vector<int> num2;
 vector<int> result;
 
-//void welcomeMessage();
+void welcomeMessage();
 void fill(); // заполенение векторов значениями, которые ввёл юзер
 void sum(); // операция суммы
 void subtraction();
@@ -26,7 +26,6 @@ void showResult(); // вывод конечного результата
 int main() {
 	setlocale(LC_ALL, "Russian");
 
-	//welcomeMessage();
 	menu();
 	/*
 	cout << endl;
@@ -40,7 +39,7 @@ int main() {
 	return 0;
 }
 
-/*void welcomeMessage() {
+void welcomeMessage() {
 	string welcome = { "Добро пожаловать в мой супер крутой калькулятор" };
 
 	for (int i = 0; i < welcome.length(); i++) {
@@ -49,11 +48,13 @@ int main() {
 	}
 	Sleep(1000);
 	system("cls");
-}*/
+}
 
 void menu() {
 	string line = { "14123213231 + 75674567465746 5675753675+437643754" };
 	bool pass = true;
+
+	welcomeMessage();
 
 	do {
 		cout << "1 - Калькулятор" << endl;
