@@ -1,11 +1,13 @@
 ﻿  main.cpp
-D:\Projects\lab_bigMath\lab_bigMath\main.cpp(45,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\Projects\lab_bigMath\lab_bigMath\main.cpp(93,22): warning C4018: <: несоответствие типов со знаком и без знака
-D:\Projects\lab_bigMath\lab_bigMath\main.cpp(113,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\Projects\lab_bigMath\lab_bigMath\main.cpp(127,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\Projects\lab_bigMath\lab_bigMath\main.cpp(143,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\Projects\lab_bigMath\lab_bigMath\main.cpp(268,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\Projects\lab_bigMath\lab_bigMath\main.cpp(277,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\Projects\lab_bigMath\lab_bigMath\main.cpp(138): warning C4715: checkOperation: значение возвращается не при всех путях выполнения
-D:\Projects\lab_bigMath\lab_bigMath\main.cpp(274): warning C4715: peepoocheck: значение возвращается не при всех путях выполнения
+D:\Projects\lab_bigMath\lab_bigMath\main.cpp(62,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Projects\lab_bigMath\lab_bigMath\main.cpp(110,22): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Projects\lab_bigMath\lab_bigMath\main.cpp(130,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Projects\lab_bigMath\lab_bigMath\main.cpp(144,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Projects\lab_bigMath\lab_bigMath\main.cpp(160,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Projects\lab_bigMath\lab_bigMath\main.cpp(267,21): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Projects\lab_bigMath\lab_bigMath\main.cpp(309,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Projects\lab_bigMath\lab_bigMath\main.cpp(323,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Projects\lab_bigMath\lab_bigMath\main.cpp(338,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Projects\lab_bigMath\lab_bigMath\main.cpp(155): warning C4715: checkOperation: значение возвращается не при всех путях выполнения
+D:\Projects\lab_bigMath\lab_bigMath\main.cpp(315): warning C4715: peepoocheck: значение возвращается не при всех путях выполнения
   lab_bigMath.vcxproj -> D:\Projects\lab_bigMath\Debug\lab_bigMath.exe

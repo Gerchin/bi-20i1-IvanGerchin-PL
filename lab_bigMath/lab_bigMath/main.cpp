@@ -13,20 +13,37 @@ vector<int> result;
 
 void welcomeMessage();
 void fill(); // заполенение векторов значениями, которые ввёл юзер
-void sum(); // операция суммы
-void subtraction();
+void sum(); // сумма
+void subtraction(); // отрицание
 void menu();
 void showResult(); // вывод конечного результата
+void deleteZero(); // удаляет нули в начале числа в результате
 
  int transfer(char simbol); // перевод символов в числа
  int checkString(); // проверка на правильность введенных символов
- int peepoocheck();
- int checkOperation();
+ int peepoocheck(); // проверка наибольшего значения
+ int checkOperation(); // проверка операции
 
 int main() {
 	setlocale(LC_ALL, "Russian");
 
-	menu();
+	do {
+		system("cls");
+		cout << "Введите выражение. (Нажмешь на ENTER при пустой строке и я умру :(  )" << endl;
+		getline(cin, userInput);
+		if (checkString()) {
+			system("cls");
+			cout << "Введите корректное выражение." << endl;
+			system("pause");
+		}
+		system("cls");
+	} while (checkString());
+
+	fill();
+	subtraction();
+	showResult();
+	system("pause");
+	//menu();
 	/*
 	cout << endl;
 	for (int i = 0; i < num1.size(); i++) {
@@ -206,6 +223,7 @@ void sum() { // операция суммы
 
 void subtraction() {
 	int flag = 0;
+	auto begin = result.cbegin();
 	
 	if (num1.size() > num2.size()) {
 		for (int i = num1.size() - num2.size(); i > 0; i--) {
@@ -224,16 +242,31 @@ void subtraction() {
 				result.insert(result.begin(), (num1[i] + 10) - num2[i]);
 				int j = i;
 				while (j > 0) {
-					if (num1[j - 1] != 0) {
+					if (num1[j - 1] > 0) {
 						num1[j - 1] = num1[j - 1] - 1;
+						flag++;
+						if (flag == 2)
+							num1[j - 1] += 1;
 						break;
 					}
-					else
+					else {
+						num1[j - 1] = -1;
+					//	if (j == 2 && num1[j - 2] == -1) ошибка при 100 - 99
+					//		num1[j - 2] = 1;			 попытался пофиксить этим условием, но никак :(
 						j--;
+					}
 				}
 			}
 			else {
 				result.insert(result.begin(), num1[i] - num2[i]);
+			}
+			if (num1[i] < 0 && i == 0) {
+				result[i] = 0;
+			}
+		}
+		for (int i = 0; i < result.size(); i++) {
+			if (result[i] < 0) {
+				result[i] = 0;
 			}
 		}
 	}
@@ -245,14 +278,22 @@ void subtraction() {
 				while (j > 0) {
 					if (num2[j - 1] != 0) {
 						num2[j - 1] = num2[j - 1] - 1;
+						flag++;
+						if (flag == 2)
+							num2[j - 1] += 1;
 						break;
 					}
-					else
+					else {
+						num2[j - 1] = -1;
 						j--;
+					}
 				}
 			}
 			else {
 				result.insert(result.begin(), num2[i] - num1[i]);
+			}
+			if (num2[i] < 0 && i == 0) {
+				result[i] = 0;
 			}
 		}
 		cout << "-";
@@ -273,7 +314,27 @@ int peepoocheck() {
 	}
 }
 
+void deleteZero() {
+	int counter = 0;
+	int temp;
+
+	auto end = result.cend();
+
+	for (int i = 0; i < result.size(); i++) {
+		if (result[i] == 0)
+			counter++;
+		else
+			break;
+	}
+	temp = result.size() - counter;
+	for (int i = 0; i < counter; i++){
+		result.erase(end - temp - 1);
+	}
+}
+
 void showResult() { // вывод конечного результата
+	deleteZero();
+
 	for (int i = 0; i < result.size(); i++)
 		cout << result[i];
 	cout << endl;
