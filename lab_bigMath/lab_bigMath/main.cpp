@@ -318,7 +318,7 @@ void deleteZero() {
 	int counter = 0;
 	int temp;
 
-	auto end = result.cend();
+	auto begin = result.cbegin();
 
 	for (int i = 0; i < result.size(); i++) {
 		if (result[i] == 0)
@@ -326,9 +326,10 @@ void deleteZero() {
 		else
 			break;
 	}
-	temp = result.size() - counter;
+	temp = counter - 1;
 	for (int i = 0; i < counter; i++){
-		result.erase(end - temp - 1);
+		result.erase(begin + temp);
+		temp--;
 	}
 }
 

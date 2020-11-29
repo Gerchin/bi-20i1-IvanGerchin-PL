@@ -7,7 +7,7 @@ D:\Projects\lab_bigMath\lab_bigMath\main.cpp(160,20): warning C4018: <: несо
 D:\Projects\lab_bigMath\lab_bigMath\main.cpp(267,21): warning C4018: <: несоответствие типов со знаком и без знака
 D:\Projects\lab_bigMath\lab_bigMath\main.cpp(309,20): warning C4018: <: несоответствие типов со знаком и без знака
 D:\Projects\lab_bigMath\lab_bigMath\main.cpp(323,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\Projects\lab_bigMath\lab_bigMath\main.cpp(338,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\Projects\lab_bigMath\lab_bigMath\main.cpp(339,20): warning C4018: <: несоответствие типов со знаком и без знака
 D:\Projects\lab_bigMath\lab_bigMath\main.cpp(155): warning C4715: checkOperation: значение возвращается не при всех путях выполнения
 D:\Projects\lab_bigMath\lab_bigMath\main.cpp(315): warning C4715: peepoocheck: значение возвращается не при всех путях выполнения
   lab_bigMath.vcxproj -> D:\Projects\lab_bigMath\Debug\lab_bigMath.exe
