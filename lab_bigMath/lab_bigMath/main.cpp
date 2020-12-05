@@ -10,23 +10,26 @@ string      userInput;
 vector<int> num1;
 vector<int> num2;
 vector<int> result;
+vector<int> temp;
 
 void welcomeMessage();
-void fill(); // заполенение векторов значениями, которые ввёл юзер
-void sum(); // сумма
-void subtraction(); // отрицание
+void fill();
+void sum();
+void subtraction();
+int split();
 void menu();
-void showResult(); // вывод конечного результата
-void deleteZero(); // удаляет нули в начале числа в результате
+void showResult();
+void deleteZero();
 
- int transfer(char simbol); // перевод символов в числа
- int checkString(); // проверка на правильность введенных символов
- int peepoocheck(); // проверка наибольшего значения
- int checkOperation(); // проверка операции
+ int transfer(char simbol);
+ int checkString();
+ int peepoocheck();
+ int checkOperation();
 
 int main() {
 	setlocale(LC_ALL, "Russian");
-
+	//menu();
+	
 	do {
 		system("cls");
 		cout << "Введите выражение. (Нажмешь на ENTER при пустой строке и я умру :(  )" << endl;
@@ -57,7 +60,7 @@ int main() {
 }
 
 void welcomeMessage() {
-	string welcome = { "Добро пожаловать в мой супер крутой калькулятор" };
+	string welcome = { "Hello!" };
 
 	for (int i = 0; i < welcome.length(); i++) {
 		cout << welcome[i];
@@ -74,19 +77,19 @@ void menu() {
 	welcomeMessage();
 
 	do {
-		cout << "1 - Калькулятор" << endl;
-		cout << "2 - КАК ПРАВИЛЬНО ПИСАТЬ В МОЁМ КАЛЬКУЛЯТОРЕ!!!!!!" << endl;
-		cout << "3 - Выйти" << endl;
+		cout << "1 - Calculator" << endl;
+		cout << "2 - HOW IT IS CORRECT TO WRITE IN (tip)" << endl;
+		cout << "3 - EXIT" << endl;
 
 		switch (_getch()) {
 		case 49:
 			do {
 				system("cls");
-				cout << "Введите выражение. (Нажмешь на ENTER при пустой строке и я умру :(  )" << endl;
+				cout << "Input an expression   If you press enter while line is empty i will die :(  )" << endl;
 				getline(cin, userInput);
 				if (checkString()) {
 					system("cls");
-					cout << "Введите корректное выражение." << endl;
+					cout << "Input a correct expression." << endl;
 					system("pause");
 				}
 				system("cls");
@@ -121,10 +124,13 @@ void menu() {
 			break;
 		}
 		system("cls");
+		num1.clear();
+		num2.clear();
+		result.clear();
 	} while (pass);
 }
 
-int checkString() { // проверка на правильность введенных символов
+int checkString() {
 	int counter = 0;
 
 	for (int i = 0; i < userInput.length(); i++) {
@@ -154,7 +160,7 @@ int checkOperation() {
 
 }
 
-void fill() { // заполенение векторов значениями, которые ввёл юзер
+void fill() {
 	int flag = 0;
 
 	for (int i = 0; i < userInput.length(); i++) {
@@ -169,7 +175,7 @@ void fill() { // заполенение векторов значениями, которые ввёл юзер
 	}
 }
 
-int transfer(char simbol) { // перевод символов в числа
+int transfer(char simbol) {
 	     if (simbol == '0')
 		return 0;
 	else if (simbol == '1')
@@ -194,7 +200,7 @@ int transfer(char simbol) { // перевод символов в числа
 		return 10;
 }
 
-void sum() { // операция суммы
+void sum() {
 	int flag = 0;
 
 	if (num1.size() > num2.size()) {
@@ -251,8 +257,6 @@ void subtraction() {
 					}
 					else {
 						num1[j - 1] = -1;
-					//	if (j == 2 && num1[j - 2] == -1) ошибка при 100 - 99
-					//		num1[j - 2] = 1;			 попытался пофиксить этим условием, но никак :(
 						j--;
 					}
 				}
@@ -300,12 +304,49 @@ void subtraction() {
 	}
 }
 
+int split() {
+	int counter = 0;
+
+	if (num1.size() > num2.size()) {
+		for (int i = num1.size() - num2.size(); i > 0; i--) {
+			num2.insert(num2.begin(), 0);
+		}
+	}
+	else if (num2.size() > num1.size()) {
+		for (int i = num2.size() - num1.size(); i > 0; i--) {
+			num1.insert(num1.begin(), 0);
+		}
+	}
+
+	if (num2[0] == 0) {
+		return 0;
+	}
+
+	while (rush_B() == 0) {
+		
+	}
+}
+
 int peepoocheck() {
 	if (num1.size() > num2.size())
 		return 1;
 	else if (num2.size() > num1.size())
 		return 0;
 	
+	for (int i = 0; i < num1.size(); i++) {
+		if (num1[i] > num2[i])
+			return 1;
+		else if (num2[i] > num1[i])
+			return 0;
+	}
+}
+
+int rush_B() {
+	if (num1.size() > num2.size())
+		return 1;
+	else if (num2.size() > num1.size())
+		return 0;
+
 	for (int i = 0; i < num1.size(); i++) {
 		if (num1[i] > num2[i])
 			return 1;
@@ -333,7 +374,7 @@ void deleteZero() {
 	}
 }
 
-void showResult() { // вывод конечного результата
+void showResult() {
 	deleteZero();
 
 	for (int i = 0; i < result.size(); i++)
