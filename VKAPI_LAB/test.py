@@ -8,12 +8,12 @@ def write_json(data):
 def request(offset):
 	group_id = '120254617'
 	url = 'https://api.vk.com/method/groups.getMembers'
-	access_token = 'b7bca36405509eedc3346424def1266b792f1a2dc499569821d8e7fd85c6323bc3ba7b80fd8371eae7fdc'
+	access_token = '13a07bced800f5b7cc4666fb74f38cbe3ac40fff5629d58f3993a83de8cb96ed8926baff47c161e27346d'
 
 	r = requests.get(url,
 		params={
 		'v': '5.130',
-		'group_id': '154434845',
+		'group_id': '43391400',
 		'access_token': access_token,
 		'offset': str(offset),
 		#'count': '0',
@@ -23,7 +23,17 @@ def request(offset):
 	return r
 
 def main():
-	write_json(request(2000).json())
+	all_users = []
+	#write_json(request(66000).json())
+	string_json = request(0).json()
+	countUsers = string_json['response']['count']
+
+	for i in range(0, countUsers, 1000):
+		string_json = request(i).json()
+
+		for k in string_json['response']['items']:
+			all_users.append(k)
+	print(all_users)
 
 if __name__ == '__main__':
 	main()
