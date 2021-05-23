@@ -1,0 +1,9 @@
+﻿  main.cpp
+d:\projects\gameengine\gameengine\main.cpp(76): warning C4244: инициализация: преобразование "sf::Int64" в "float", возможна потеря данных
+d:\projects\gameengine\gameengine\main.cpp(89): warning C4305: =: усечение из "double" в "float"
+d:\projects\gameengine\gameengine\main.cpp(94): warning C4305: =: усечение из "double" в "float"
+d:\projects\gameengine\gameengine\main.cpp(99): warning C4305: =: усечение из "double" в "float"
+d:\projects\gameengine\gameengine\main.cpp(104): warning C4305: =: усечение из "double" в "float"
+d:\projects\gameengine\gameengine\main.cpp(109): warning C4305: =: усечение из "double" в "float"
+d:\projects\gameengine\gameengine\main.cpp(131): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+  GameEngine.vcxproj -> D:\Projects\GameEngine\Debug\GameEngine.exe
