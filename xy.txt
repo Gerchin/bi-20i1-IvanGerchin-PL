@@ -1,0 +1,19 @@
+Right = xright  - 1200
+	ybottom - 575
+	ytop    - 384
+
+Top
+
+Bot
+
+Left
+
+Right = xright  - 1248
+	ybottom - 575
+	ytop    - 384
+
+Top
+
+Bot
+
+Left

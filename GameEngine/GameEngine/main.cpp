@@ -123,9 +123,9 @@ int main()
 		for (int i = 0; i < HEIGHT_MAP; i++)
 			for (int j = 0; j < WIDTH_MAP; j++)
 			{
-				if (start[i][j] == ' ')  s_map.setTextureRect(IntRect(0, 0, 32, 32));
-				if (start[i][j] == 's')  s_map.setTextureRect(IntRect(32, 0, 32, 32));
-				if ((start[i][j] == '0')) s_map.setTextureRect(IntRect(64, 0, 32, 32));
+				if (A4Room[i][j] == ' ')  s_map.setTextureRect(IntRect(0, 0, 32, 32));
+				if (A4Room[i][j] == 's')  s_map.setTextureRect(IntRect(32, 0, 32, 32));
+				if ((A4Room[i][j] == '0')) s_map.setTextureRect(IntRect(64, 0, 32, 32));
 
 
 				s_map.setPosition(j * 32, i * 32);
