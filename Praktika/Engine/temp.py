@@ -41,5 +41,5 @@ def initial_file():
         type_error = stolbs['Тип ошибки CWE'].tolist()[i]
         diction[i] = (programm, os, class_yazvim, date, yr_opas, status_yaz, nal_exploit, ystr_yaz, type_error)
         print(diction[i])
- 
+
 initial_file()

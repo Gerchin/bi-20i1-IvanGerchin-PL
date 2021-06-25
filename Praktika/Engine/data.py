@@ -9,3 +9,5 @@ status = []
 explExists = []
 info = []
 cwe = []
+########################
+allElements = {}
